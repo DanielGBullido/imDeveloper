@@ -25,34 +25,47 @@
         <?php esc_html_e('Skip to content', 'imdeveloper'); ?></a-->
 <div class="container-fluid">
     <div class="row">
-
         <header class="col-sm-3 col-md-2 navigation-panel">
-            <div class="site-branding">
+            <div class="navigation-panel-container">
                 <?php
-                the_custom_logo();
+
+                $custom_logo_id = get_theme_mod('custom_logo');
+                $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
+                if (has_custom_logo()) : ?>
+                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                        <img class="site-logo" src="<?php echo esc_url($logo[0]); ?>">
+                    </a>
+                <?php endif;
+
                 if (is_front_page() && is_home()) : ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                              rel="home"><?php bloginfo('name'); ?></a></h1>
+                    <h1 class="site-title"><?php bloginfo('name'); ?></h1>
                 <?php else : ?>
-                    <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                             rel="home"><?php bloginfo('name'); ?></a></p>
+                    <p class="site-title"><?php bloginfo('name'); ?></p>
                     <?php
                 endif;
 
                 $description = get_bloginfo('description', 'display');
-                if ($description || is_customize_preview()) : ?>
-                    <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+                if (is_front_page() && is_home() && !is_customize_preview()) : ?>
+                    <h2 class="site-description"><?= $description; ?></h2>
+                <?php else : ?>
+                    <p class="site-description"><?= $description; ?></p>
                     <?php
                 endif; ?>
             </div><!-- .site-branding -->
 
-            <nav id="site-navigation" class="main-navigation">
-                <button class="menu-toggle" aria-controls="primary-menu"
-                        aria-expanded="false"><?php esc_html_e('Primary Menu', 'imdeveloper'); ?></button>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-menu" aria-expanded="false" aria-controls="navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <nav id="site-navigation" class="site-navigation">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'menu-1',
                     'menu_id' => 'primary-menu',
+                    'container' => 'ul',
+                    'menu_class' => 'nav nav-pills nav-stacked'
                 ));
                 ?>
             </nav><!-- #site-navigation -->
