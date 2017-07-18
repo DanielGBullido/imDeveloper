@@ -20,12 +20,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-
-<!--a class="skip-link screen-reader-text" href="#content">
-        <?php esc_html_e('Skip to content', 'imdeveloper'); ?></a-->
 <div class="container-fluid">
     <div class="row">
-        <header class="col-sm-3 col-md-2 navigation-panel">
+        <header class="col-xs-3 col-sm-3 col-md-2 col-lg-2 navigation-panel">
             <div class="navigation-panel-container">
                 <?php
 
@@ -53,13 +50,13 @@
                 endif; ?>
             </div><!-- .site-branding -->
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-menu" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle button-menu">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
 
-            <nav id="site-navigation" class="site-navigation">
+            <nav id="site-navigation" class="site-navigation ">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'menu-1',
@@ -71,4 +68,4 @@
             </nav><!-- #site-navigation -->
         </header><!-- #masthead -->
 
-        <main class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <main class="col-xs-9 col-sm-9 col-md-10 col-lg-10 col-xs-offset-3 col-sm-offset-4 col-md-offset-2 col-lg-offset-2  main">
