@@ -11,6 +11,7 @@
             '<a href="https://automattic.com/">Underscores.me</a>');
         ?>
     </div><!-- .site-info -->
+    <?php wp_footer(); ?>
 </footer><!-- #colophon -->
 </div>
 </div>

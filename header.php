@@ -68,4 +68,4 @@
             </nav><!-- #site-navigation -->
         </header><!-- #masthead -->
 
-        <main class="col-xs-9 col-sm-9 col-md-10 col-lg-10 col-xs-offset-3 col-sm-offset-4 col-md-offset-2 col-lg-offset-2  main">
+        <main class="col-xs-9 col-sm-9 col-md-10 col-lg-10 col-xs-offset-3 col-sm-offset-3 col-md-offset-2 col-lg-offset-2  main">

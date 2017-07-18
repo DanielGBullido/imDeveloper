@@ -20,7 +20,7 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
 body {
-    background-color: #FFFFFF;
+    background-color: #f0f0f0;
 }
 
 /* navigation-panel */
@@ -87,6 +87,24 @@ header {
     border-radius: 0px;
     background-color: #26A69A;
 }
+
+
+
+/***** MAIN *****/
+
+main {
+    background-color: #f0f0f0;
+}
+
+main section article{
+    background-color: #FFFFFF;
+    padding: 30px;
+    max-width: 990px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+
 
 @media (min-width: 481px) and (max-width: 600px) {
     .navigation-panel-container .site-title {
