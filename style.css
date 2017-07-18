@@ -19,13 +19,15 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
-body{
+body {
     background-color: #FFFFFF;
 }
+
 /* navigation-panel */
-header{
+header {
 
 }
+
 .navigation-panel {
     position: fixed;
     top: 0px;
@@ -33,54 +35,72 @@ header{
     left: 0;
     z-index: 1000;
     display: block;
-    padding: 20px 0px;
+    padding: 0;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: #009688;
     border-right: 1px solid #eee;
 
 }
-.navigation-panel-container{
+
+.navigation-panel-container {
     text-align: center;
-    color:#FFFFFF;
+    color: #FFFFFF;
+    padding: 15px 15px 0 15px;
 }
-.navigation-panel-container a{
+
+.navigation-panel-container a {
     color: #FFFFFF;
 }
 
-.site-logo{
+.navigation-panel-container .site-logo {
     border-radius: 100px;
-    width: 150px;
+    width: 100%;
+    max-width: 150px;
     text-align: center;
 }
 
-.site-title{
+.navigation-panel-container .site-title {
     font-size: 17px;
 }
-.site-description{
+
+.navigation-panel-container .site-description {
     font-size: 13px;
-    margin-top: 0px;
+    margin: 0;
     color: #f3f3f3;
 }
-.site-navigation{
 
+.navigation-panel .button-menu {
+    display: none;
 }
-.site-navigation .nav a{
+
+.navigation-panel .site-navigation {
+    background-color: #00796B;
+    margin-top: 15px;
+}
+
+.navigation-panel .site-navigation .nav a {
     color: #FFFFFF;
 }
 
-.site-navigation .nav a:hover{
+.navigation-panel .site-navigation .nav a:hover {
     border-radius: 0px;
     background-color: #26A69A;
 }
 
+@media (min-width: 481px) and (max-width: 600px) {
+    .navigation-panel-container .site-title {
+        font-size: 15px;
+    }
 
+    .navigation-panel-container .site-description {
+        font-size: 12px;
+    }
+}
 
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 480px) {
+@media (max-width: 480px) {
 
-    .navigation-panel{
+    .navigation-panel {
         position: fixed;
         padding: 0px;
         width: 100%;
@@ -88,53 +108,63 @@ and (max-device-width: 480px) {
         -webkit-transition: height 0.2s ease-in;
         -moz-transition: height 0.2s ease-in;
     }
-    .navigation-panel-container{
+
+    .navigation-panel-container {
         height: 60px;
         padding: 10px 15px;
     }
-    .navigation-panel-container a{
+
+    .navigation-panel-container a {
         display: inline-block;
         float: left;
 
     }
-    .site-logo{
+
+    .navigation-panel-container .site-logo {
         width: 40px;
     }
-    .site-navigation{
+
+    .navigation-panel .site-navigation {
         position: absolute;
         width: 100%;
         height: 100%;
         background-color: #00796B;
     }
-    .site-navigation li{
+
+    .navigation-panel .site-navigation li {
         padding: 10px 0;
         background: #00897B;
     }
-    .site-title{
+
+    .navigation-panel-container .site-title {
         margin: 10px;
         display: inline-block;
         float: left;
     }
-    .site-description{
+
+    .navigation-panel-container .site-description {
         display: none;
     }
-    .button-menu{
+
+    .navigation-panel .button-menu {
+        display: block;
         float: right;
         top: 5px;
         right: 0;
         position: absolute;
     }
-    .button-menu .icon-bar{
+
+    .navigation-panel .button-menu .icon-bar {
         background-color: #FFFFFF;
     }
 
-    .navigation-panel.open-menu{
+    .navigation-panel.open-menu {
         height: 100%;
         -webkit-transition: height 0.35s ease-in;
         -moz-transition: height 0.35s ease-in;
     }
 
-    .navigation-panel.open-menu .site-navigation{
+    .navigation-panel.open-menu .site-navigation {
         -webkit-animation-name: slideInLeft;
         animation-name: slideInLeft;
         -webkit-animation-duration: 0.5s;
@@ -142,6 +172,7 @@ and (max-device-width: 480px) {
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
     }
+
     @-webkit-keyframes slideInLeft {
         0% {
             -webkit-transform: translateX(-50%);
@@ -169,7 +200,7 @@ and (max-device-width: 480px) {
 
 
 
-    .main{
+    .main {
         margin-top: 60px;
         width: 100%;
         margin-left: 0px;
