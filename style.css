@@ -62,12 +62,14 @@ header {
 
 .navigation-panel-container .site-title {
     font-size: 17px;
+    text-align: left;
 }
 
 .navigation-panel-container .site-description {
     font-size: 13px;
     margin: 0;
     color: #f3f3f3;
+    text-align: left;
 }
 
 .navigation-panel .button-menu {
@@ -104,6 +106,22 @@ main section article{
     margin-top: 30px;
 }
 
+main section article .entry-title{
+    margin: 0px;
+    padding: 0 0 15px 0px;
+    text-align: center;
+}
+main section article .entry-title .title{
+    margin: 0px;
+    color: #555555;
+}
+
+main section article .entry-thumb{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 15px;
+}
 
 
 @media (min-width: 481px) and (max-width: 600px) {

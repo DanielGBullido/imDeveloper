@@ -10,45 +10,48 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+    <header class="entry-header">
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php imdeveloper_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
+        <div class="entry-title">
+            <a href="<?php the_permalink() ?>" rel="bookmark">
+                <?php
+                if (is_singular()) :
+                    the_title('<h1 class="title">', '</h1>');
+                else :
+                    the_title('<h2 class="title">', '</h2>');
+                endif; ?>
+            </a>
+        </div>
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'imdeveloper' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) );
+        <?php
+        if (has_post_thumbnail()) : ?>
+            <div class="entry-thumb">
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    <?php the_post_thumbnail("large", ["class" => "img-thumbnail"]); ?>
+                </a>
+            </div>
+        <?php endif;
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'imdeveloper' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+        if ('post' === get_post_type()) : ?>
+            <div class="entry-meta">
+                <?php imdeveloper_posted_on(); ?>
+            </div><!-- .entry-meta -->
+            <?php
+        endif; ?>
+    </header><!-- .entry-header -->
 
-	<footer class="entry-footer">
-		<?php imdeveloper_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+    <div class="entry-content">
+        <?php
+        the_excerpt();
+
+        wp_link_pages(array(
+            'before' => '<div class="page-links">' . esc_html__('Pages:', 'imdeveloper'),
+            'after' => '</div>',
+        ));
+        ?>
+    </div><!-- .entry-content -->
+
+    <footer class="entry-footer">
+        <?php imdeveloper_entry_footer(); ?>
+    </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -53,3 +53,11 @@ function imdeveloper_customize_preview_js() {
 	wp_enqueue_script( 'imdeveloper-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'imdeveloper_customize_preview_js' );
+
+
+// Replaces the excerpt "Read More" text by a link
+function new_excerpt_more($more) {
+    global $post;
+    return '<a class="read-more" href="'. get_permalink($post->ID) . '"> ...( Seguir leyendo )</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
