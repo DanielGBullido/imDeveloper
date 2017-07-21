@@ -39,7 +39,7 @@ header {
     overflow-x: hidden;
     overflow-y: auto;
     background-color: #009688;
-    border-right: 1px solid #eee;
+    border-right: 1px solid rgba(240, 240, 240, 0.31);
 
 }
 
@@ -98,6 +98,10 @@ main {
     background-color: #f0f0f0;
 }
 
+main section.blog-main{
+    margin-bottom: 60px;
+}
+
 main section article{
     background-color: #FFFFFF;
     padding: 30px;
@@ -122,6 +126,41 @@ main section article .entry-thumb{
     text-align: center;
     margin-bottom: 15px;
 }
+main section article .entry-meta{
+    margin-bottom: 10px;
+}
+main section article .entry-meta .container-meta{
+    margin-right: 10px;
+}
+main section article .entry-meta .container-meta a{
+    color: #0f0f0f;
+    font-size: 13px;
+}
+main section article .entry-meta .container-meta .glyphicon{
+    color: #555555;
+    font-size: 13px;
+    margin-right: 5px;
+}
+main section article .entry-meta .entry-content{
+
+}
+
+main section article .entry-meta .entry-footer{
+
+}
+
+/***** FOOTER *****/
+.footer-container{
+    background-color: #555555;
+    color: #FFFFFF;
+}
+.footer-container footer{
+     padding: 30px 25px;
+}
+.footer-container footer a{
+    color: #FFFFFF;
+}
+
 
 
 @media (min-width: 481px) and (max-width: 600px) {

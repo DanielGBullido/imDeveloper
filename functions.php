@@ -123,9 +123,9 @@ add_action('widgets_init', 'imdeveloper_widgets_init');
  */
 function imdeveloper_scripts()
 {
-    wp_enqueue_style('jquery-js', get_template_directory_uri() . '/assets/js/jquery.min.js', array(), '20151215',
-        false);
-    wp_enqueue_style('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '20151215',
+    wp_enqueue_script('jquery-js', get_template_directory_uri() . '/assets/js/jquery.min.js', array('jquery'), '3.2.1',
+        true);
+    wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '20151215',
         false);
     wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(),
         '20151215', false);
