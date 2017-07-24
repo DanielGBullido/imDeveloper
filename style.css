@@ -149,6 +149,11 @@ main section article .entry-meta .entry-footer{
 
 }
 
+main section article .entry-footer .post-navigation .nav-links{
+    width: 100%;
+    display: inline-block;
+}
+
 /***** FOOTER *****/
 .footer-container{
     background-color: #555555;

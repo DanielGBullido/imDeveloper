@@ -42,7 +42,11 @@
 
     <div class="entry-content">
         <?php
-        the_excerpt();
+        if (is_single()) {
+            the_content();
+        } else {
+            the_excerpt();
+        }
 
         wp_link_pages(array(
             'before' => '<div class="page-links">' . esc_html__('Pages:', 'imdeveloper'),
@@ -53,5 +57,12 @@
 
     <footer class="entry-footer">
         <?php imdeveloper_entry_footer(); ?>
+        <?php if (is_single()) {
+            imdeveloper_custom_post_navigation();
+
+            if (comments_open() || get_comments_number()) :
+                comments_template();
+            endif;
+        } ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
