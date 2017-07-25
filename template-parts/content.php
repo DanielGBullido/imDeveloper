@@ -58,7 +58,8 @@
     <footer class="entry-footer">
         <?php imdeveloper_entry_footer(); ?>
         <?php if (is_single()) {
-            imdeveloper_custom_post_navigation();
+
+            imdeveloper_related_post($post->ID);
 
             if (comments_open() || get_comments_number()) :
                 comments_template();
