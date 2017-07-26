@@ -172,10 +172,17 @@ main section article .entry-meta .entry-content {
 main section article .entry-meta .entry-footer {
 
 }
-
+main section article .entry-footer{
+    margin-top: 30px;
+}
 main section article .entry-footer .post-navigation .nav-links {
     width: 100%;
     display: inline-block;
+}
+
+main section article .entry-footer .related-posts h3 {
+    margin: 0px;
+    margin-bottom: 15px;
 }
 
 main section article .entry-footer .related-posts ul {
