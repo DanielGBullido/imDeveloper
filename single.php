@@ -10,7 +10,7 @@
 get_header(); ?>
 <div class="row">
     <div class="container-fluid">
-        <section id="primary" class="content-main">
+        <section id="primary" class="single-main">
             <main id="main" class="site-main">
                 <?php
                 while (have_posts()) : the_post();

@@ -65,6 +65,11 @@ header {
     text-align: left;
 }
 
+.navigation-panel-container p {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 .navigation-panel-container .site-description {
     font-size: 13px;
     margin: 0;
@@ -94,6 +99,21 @@ header {
 
 main {
     background-color: #f0f0f0;
+}
+
+main .page-header {
+    margin: 0;
+    padding: 0px;
+    background: #FFF;
+    width: auto;
+    display: block;
+    text-align: center;
+}
+
+main .page-header h1 {
+    display: block;
+    margin: 0px;
+    padding: 15px;
 }
 
 main section {
@@ -214,7 +234,7 @@ main section article .entry-footer .related-posts li {
     position: relative;
 }
 
-.comments-list li .comment-main-level{
+.comments-list li .comment-main-level {
     display: inline-block;
     width: 100%;
 }
@@ -251,7 +271,6 @@ main section article .entry-footer .related-posts li {
     height: 50px;
 }
 
-
 .comments-list .comment-box {
     padding: 0px;
     position: relative;
@@ -274,9 +293,10 @@ main section article .entry-footer .related-posts li {
     border-radius: 4px 4px 0 0;
 }
 
-.comment-box .comment-head .reply{
+.comment-box .comment-head .reply {
     float: right;
 }
+
 .comment-box .comment-head i {
     float: right;
     margin-left: 14px;
@@ -336,6 +356,14 @@ main section article .entry-footer .related-posts li {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+}
+
+/** 404 **/
+.not-found{
+    text-align: center;
+}
+.not-found img{
+    padding: 30px;
 }
 
 @media only screen and (max-width: 766px) {
