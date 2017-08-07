@@ -9,6 +9,14 @@ Mandatory Plugins
 ===
 If you want all functionality looks good you need this plugins:
 
-https://es.wordpress.org/plugins/remove-category-url/
-https://es.wordpress.org/plugins/jetpack/
-https://es.wordpress.org/plugins/contact-form-7/
+Remove Category for url:<br>
+https://es.wordpress.org/plugins/remove-category-url/<br>
+
+Jetpack for comments, image optimice & security:<br>
+https://es.wordpress.org/plugins/jetpack/<br>
+
+Optional Plugins
+===
+
+Create form contact:<br>
+https://es.wordpress.org/plugins/contact-form-7/<br>
