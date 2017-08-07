@@ -5,6 +5,75 @@
  * @package imDeveloper
  */
 
+
+if ( ! function_exists('proyects') ) {
+
+// Register Custom Post Type
+    function proyects() {
+
+        $labels = array(
+            'name'                  => _x( 'Proyectos', 'Post Type General Name', 'proyects' ),
+            'singular_name'         => _x( 'Proyecto', 'Post Type Singular Name', 'proyects' ),
+            'menu_name'             => __( 'Proyectos', 'proyects' ),
+            'name_admin_bar'        => __( 'Proyecto', 'proyects' ),
+            'archives'              => __( 'Item Archives', 'proyects' ),
+            'attributes'            => __( 'Item Attributes', 'proyects' ),
+            'parent_item_colon'     => __( 'Parent Item:', 'proyects' ),
+            'all_items'             => __( 'Todos los proyectos', 'proyects' ),
+            'add_new_item'          => __( 'Añadir nuevo', 'proyects' ),
+            'add_new'               => __( 'Añadir nuevo', 'proyects' ),
+            'new_item'              => __( 'Proyecto nuevo', 'proyects' ),
+            'edit_item'             => __( 'Editar proyecto', 'proyects' ),
+            'update_item'           => __( 'Actualizar proyecto', 'proyects' ),
+            'view_item'             => __( 'Ver proyecto', 'proyects' ),
+            'view_items'            => __( 'Ver proyectos', 'proyects' ),
+            'search_items'          => __( 'Buscar proyecto', 'proyects' ),
+            'not_found'             => __( 'No encontrado', 'proyects' ),
+            'not_found_in_trash'    => __( 'No existe', 'proyects' ),
+            'featured_image'        => __( 'Imagen destacada', 'proyects' ),
+            'set_featured_image'    => __( 'Elegir imagen destacada', 'proyects' ),
+            'remove_featured_image' => __( 'Eliminar imagen destacada', 'proyects' ),
+            'use_featured_image'    => __( 'Usar imagen destacada', 'proyects' ),
+            'insert_into_item'      => __( 'Añadir al proyecto', 'proyects' ),
+            'uploaded_to_this_item' => __( 'Añadir a este proyecto', 'proyects' ),
+            'items_list'            => __( 'Listado', 'proyects' ),
+            'items_list_navigation' => __( 'Navegación', 'proyects' ),
+            'filter_items_list'     => __( 'Filtros', 'proyects' ),
+        );
+        $rewrite = array(
+            'slug'                  => 'proyecto',
+            'with_front'            => true,
+            'pages'                 => true,
+            'feeds'                 => true,
+        );
+        $args = array(
+            'label'                 => __( 'Proyecto', 'proyects' ),
+            'description'           => __( 'Site articles.', 'proyects' ),
+            'labels'                => $labels,
+            'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'trackbacks', 'revisions', 'custom-fields', 'page-attributes', 'post-formats', ),
+            'hierarchical'          => false,
+            'public'                => true,
+            'show_ui'               => true,
+            'show_in_menu'          => true,
+            'menu_position'         => 5,
+            'menu_icon'             => 'dashicons-analytics',
+            'show_in_admin_bar'     => true,
+            'show_in_nav_menus'     => true,
+            'can_export'            => true,
+            'has_archive'           => 'proyectos',
+            'exclude_from_search'   => false,
+            'publicly_queryable'    => true,
+            'rewrite'               => $rewrite,
+            'capability_type'       => 'page',
+        );
+        register_post_type( 'proyects', $args );
+
+    }
+    add_action( 'init', 'proyects', 0 );
+
+}
+
+
 /**
  * Adds custom classes to the array of body classes.
  *
